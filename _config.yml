@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
 url: "https://snowmuffin.github.io/"
 
 github:
-  username: github_username # change to your github username
+  username: snowmuffin # change to your github username
 
 
 social:
