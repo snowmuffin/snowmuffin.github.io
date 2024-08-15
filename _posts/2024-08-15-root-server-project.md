@@ -22,5 +22,7 @@ tags: [nodejs, nginx, server, architecture]
 - **Docker**
 
 
+기본 페이지 템플릿은 sb admin을 사용할 예정
+
 
 
