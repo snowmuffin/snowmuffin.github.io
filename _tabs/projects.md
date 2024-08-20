@@ -3,7 +3,7 @@ permalink: /projects/
 icon: fa-solid fa-diagram-project
 order: 1
 ---
-{% assign project_categories = site.categories | where: "first", "projects" %}
+
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
 
