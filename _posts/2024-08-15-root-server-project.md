@@ -2,7 +2,7 @@
 layout: post
 title: root_server_project
 date: 2024-08-15 16:43 +0900
-categories: [projects, nodejs, nginx, infrastructure]
+categories: [projects, root_server_project]
 tags: [nodejs, nginx, server, architecture]
 ---
 ## 프로젝트 개요
