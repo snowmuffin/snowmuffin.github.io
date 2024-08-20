@@ -4,6 +4,7 @@ title: root_server_project
 date: 2024-08-15 16:43 +0900
 categories: [projects, root_server_project]
 tags: [nodejs, nginx, server, architecture]
+projects: [root_server_project]
 ---
 ## 프로젝트 개요
 

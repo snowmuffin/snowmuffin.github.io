@@ -3,6 +3,8 @@ layout: post
 title: TourSherpa
 categories: [projects, TourSherpa]
 tags: [여행,여행 보조 프로그램, Django, Airflow, AWS, S3, RedShift, EC2, Docker]
+projects: [TourSherpa]
+
 date: 2024-08-12 00:50 +0900
 ---
 [https://github.com/Toursherpa/TourSherpa.git](https://github.com/Toursherpa/TourSherpa.git)
