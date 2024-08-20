@@ -3,8 +3,12 @@ permalink: /projects/
 icon: fa-solid fa-diagram-project
 order: 1
 ---
+{% assign project_categories = site.categories | where: "second", "projects" %}
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
+  {% for category in project_categories %}
+  <h1 class="card-title my-2 mt-md-0">{{ category }}</h1>
+  {% endfor %}
   {% for post in site.categories.projects %}
     <article class="card-wrapper card">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
