@@ -1,11 +1,11 @@
 ---
-permalink: /projects/
-icon: fa-solid fa-diagram-project
-order: 1
+layout: default
+title: "Alpha Projects"
+permalink: /projects/alpha/
 ---
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  {% for post in site.categories.projects %}
+  {% for post in site.categories.alpha %}
     <article class="card-wrapper card">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
         {% assign card_body_col = '12' %}
