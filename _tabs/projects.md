@@ -1,74 +1,79 @@
 ---
-layout: default
-title: "Alpha Projects"
-permalink: /projects/alpha/
+permalink: /projects/
+icon: fa-solid fa-diagram-project
+order: 1
 ---
 
-<div id="post-list" class="flex-grow-1 px-xl-1">
-  {% for post in site.categories.alpha %}
-    <article class="card-wrapper card">
-      <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
-        {% assign card_body_col = '12' %}
+{% assign project_categories = site.categories | where: "first", "projects" %}
 
-        {% if post.image %}
-          {% assign src = post.image.path | default: post.image %}
-          {% unless src contains '//' %}
-            {% assign src = post.media_subpath | append: '/' | append: src | replace: '//', '/' %}
-          {% endunless %}
+{% for category in project_categories %}
+  ### {{ category[0] | capitalize }} Projects
+  <div id="post-list" class="flex-grow-1 px-xl-1">
+    {% for post in category[1] %}
+      <article class="card-wrapper card">
+        <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+          {% assign card_body_col = '12' %}
 
-          {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
+          {% if post.image %}
+            {% assign src = post.image.path | default: post.image %}
+            {% unless src contains '//' %}
+              {% assign src = post.media_subpath | append: '/' | append: src | replace: '//', '/' %}
+            {% endunless %}
 
-          {% assign lqip = null %}
+            {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
 
-          {% if post.image.lqip %}
-            {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
+            {% assign lqip = null %}
+
+            {% if post.image.lqip %}
+              {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
+            {% endif %}
+
+            <div class="col-md-5">
+              <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
+            </div>
+
+            {% assign card_body_col = '7' %}
           {% endif %}
 
-          <div class="col-md-5">
-            <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
-          </div>
+          <div class="col-md-{{ card_body_col }}">
+            <div class="card-body d-flex flex-column">
+              <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
 
-          {% assign card_body_col = '7' %}
-        {% endif %}
-
-        <div class="col-md-{{ card_body_col }}">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>{% include post-description.html %}</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                {% include datetime.html date=post.date lang=lang %}
-
-                <!-- categories -->
-                {% if post.categories.size > 0 %}
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    {% for category in post.categories %}
-                      {{ category }}
-                      {%- unless forloop.last -%},{%- endunless -%}
-                    {% endfor %}
-                  </span>
-                {% endif %}
+              <div class="card-text content mt-0 mb-3">
+                <p>{% include post-description.html %}</p>
               </div>
 
-              {% if post.pin %}
-                <div class="pin ms-1">
-                  <i class="fas fa-thumbtack fa-fw"></i>
-                  <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
+              <div class="post-meta flex-grow-1 d-flex align-items-end">
+                <div class="me-auto">
+                  <!-- posted date -->
+                  <i class="far fa-calendar fa-fw me-1"></i>
+                  {% include datetime.html date=post.date lang=lang %}
+
+                  <!-- categories -->
+                  {% if post.categories.size > 0 %}
+                    <i class="far fa-folder-open fa-fw me-1"></i>
+                    <span class="categories">
+                      {% for category in post.categories %}
+                        {{ category }}
+                        {%- unless forloop.last -%},{%- endunless -%}
+                      {% endfor %}
+                    </span>
+                  {% endif %}
                 </div>
-              {% endif %}
+
+                {% if post.pin %}
+                  <div class="pin ms-1">
+                    <i class="fas fa-thumbtack fa-fw"></i>
+                    <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
+                  </div>
+                {% endif %}
+              </div>
+              <!-- .post-meta -->
             </div>
-            <!-- .post-meta -->
+            <!-- .card-body -->
           </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  {% endfor %}
-</div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+{% endfor %}
