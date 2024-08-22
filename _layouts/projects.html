@@ -9,8 +9,8 @@ layout: page
 {% assign LIST_PREFIX = 'l_' %}
 
 {% assign group_index = 0 %}
-{{ site.categories | inspect }}
-{% assign sort_projects = site.categories | sort %}
+{{ site.projects | inspect }}
+{% assign sort_projects = site.projects | sort %}
 
 <!-- {% for project in sort_projects %}
   {% assign project_name = project | first %}
