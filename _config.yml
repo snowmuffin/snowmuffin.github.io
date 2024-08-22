@@ -190,6 +190,12 @@ defaults:
       layout: page
       permalink: /:title/
   - scope:
+    path: ""
+    type: projects # see `site.collections`
+    values:
+      layout: project
+      permalink: /projects/:name/
+  - scope:
       path: assets/js/dist
     values:
       swcache: true
