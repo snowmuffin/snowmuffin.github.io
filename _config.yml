@@ -193,7 +193,7 @@ defaults:
     path: ""
     type: projects # see `site.collections`
     values:
-      layout: project
+      layout: page
       permalink: /projects/:name/
   - scope:
       path: assets/js/dist
