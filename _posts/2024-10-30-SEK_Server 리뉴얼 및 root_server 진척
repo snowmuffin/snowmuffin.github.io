@@ -15,3 +15,4 @@ Nexsus 서버 플러그인으로 여러 서버를 겹
 node.js,nginx,mysql을 사용한 기본 서버에
 SEK_Server용 웹사이트(Reactor 이용)을 연결
 현재 기능 구현 및 테스트.
+추후 root서버는 여러 게임서버의 웹 연동 컨텐츠의 허브 역할을 하게 구상중.
